@@ -286,6 +286,46 @@ margin-top:40px;
 </div>
 
 </div>
+<!-- Payment Block -->
+    <div class="checkout-box">
+        <h2>How to Complete Your Order</h2>
+        <p><strong>Step 1:</strong> Click "Add to Order" on the items you want.</p>
+        <p><strong>Step 2:</strong> Select your preferred fulfillment/delivery method below.</p>
+        <p><strong>Step 3:</strong> Click the green button below to submit your order summary to us on WhatsApp.</p>
+        
+        <div id="cart-summary" style="margin-top: 15px; font-weight: bold; color: #2c3e50; line-height: 1.6;">
+            Current Selected Items: None
+        </div>
+
+        <!-- Delivery Selector Module -->
+        <div id="delivery-box" class="delivery-section">
+            <label for="delivery-method">Select Fulfillment / Shipping Method:</label>
+            <select id="delivery-method" class="form-select" onchange="updateCartDisplay()">
+                <option value="pickup" data-fee="0">🏃‍♂️ Local Pickup / Collection (Free - R0.00)</option>
+                <option value="paxi" data-fee="60">📦 Paxi - Pep to Pep (R60.00)</option>
+                <option value="courier" data-fee="100">🚚 Standard Door to Door Courier (R100.00)</option>
+            </select>
+        </div>
+
+        
+<h3>Customer Information</h3>
+<input type="text" id="customer-name" placeholder="Full Name" style="width:100%;padding:10px;margin:6px 0;">
+<input type="tel" id="customer-phone" placeholder="WhatsApp Number" style="width:100%;padding:10px;margin:6px 0;">
+<textarea id="customer-address" placeholder="Delivery Address" style="width:100%;padding:10px;margin:6px 0;height:80px;"></textarea>
+
+<div class="btn-group">
+            <!-- WhatsApp Order Button -->
+            <button id="whatsapp-btn" onclick="sendWhatsAppOrder()" style="background-color: #25D366; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 1.1em; margin-top: 10px; display: none;">
+                📱 Submit Order via WhatsApp
+            </button>
+
+            <!-- Clear/Empty Cart Button -->
+            <button id="clear-btn" class="clear-btn" onclick="emptyCart()">
+                🗑️ Empty Cart / Reset Order
+            </button>
+        </div>
+    </div>
+    
 <footer>
 
 <h2>TechTray Holdings</h2>
