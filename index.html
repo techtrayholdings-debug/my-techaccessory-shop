@@ -127,7 +127,6 @@
         <div id="agent-box" class="form-section">
             <label for="whatsapp-number">Send Order To:</label>
             <select id="whatsapp-number" class="form-select">
-                <!-- FIXED: Reconfigured to only host your single verified business details -->
                 <option value="27672653887" data-link="https://wa.me">📱 TechTray Main Sales Line (067 265 3887)</option>
             </select>
         </div>
@@ -198,3 +197,7 @@
             document.getElementById('agent-box').style.display = 'block';
             
             updateCartDisplay();
+            alert(`${itemName} added to your summary below!`);
+        }
+
+        function emptyCart() {
