@@ -111,7 +111,7 @@
             Current Selected Items: None
         </div>
 
-        <!-- NEW: Delivery Selector Wrapper Layout -->
+        <!-- Delivery Selector Wrapper Layout -->
         <div id="delivery-box" class="delivery-section">
             <label for="delivery-method">Select Fulfillment / Shipping Method:</label>
             <select id="delivery-method" class="delivery-select" onchange="updateCartDisplay()">
@@ -157,7 +157,6 @@
         let currentOrder = [];
         let itemsCost = 0;
 
-        // NEW: Refactored calculation method to handle delivery logic
         function updateCartDisplay() {
             if (currentOrder.length === 0) {
                 document.getElementById('cart-summary').innerHTML = "Current Selected Items: None";
@@ -182,7 +181,6 @@
             currentOrder.push(itemName);
             itemsCost += itemPrice;
             
-            // Show configuration modules
             document.getElementById('whatsapp-btn').style.display = 'block';
             document.getElementById('clear-btn').style.display = 'block';
             document.getElementById('delivery-box').style.display = 'block';
@@ -196,9 +194,8 @@
                 currentOrder = [];
                 itemsCost = 0;
                 
-                // Reset select option back to default
                 document.getElementById('delivery-method').selectedIndex = 0;
-                
                 updateCartDisplay();
                 
-                // Hide dynamic view blocks 
+                document.getElementById('whatsapp-btn').style.display = 'none';
+                document.getElementById('clear-btn').style.display = 'none';
