@@ -135,6 +135,10 @@
 
     <!-- STEP 4: THE FILTERING SCRIPT -->
     <script>
+        // FIXED: Variables placed perfectly at the top of the script block
+        let currentOrder = [];
+        let itemsCost = 0;
+
         function filterCategory(category, buttonElement) {
             let buttons = document.getElementsByClassName('tab-btn');
             for (let btn of buttons) {
@@ -153,9 +157,6 @@
                 }
             }
         }
-
-        let currentOrder = [];
-        let itemsCost = 0;
 
         function updateCartDisplay() {
             if (currentOrder.length === 0) {
@@ -181,6 +182,7 @@
             currentOrder.push(itemName);
             itemsCost += itemPrice;
             
+            // Un-hide interactive blocks
             document.getElementById('whatsapp-btn').style.display = 'block';
             document.getElementById('clear-btn').style.display = 'block';
             document.getElementById('delivery-box').style.display = 'block';
@@ -198,4 +200,3 @@
                 updateCartDisplay();
                 
                 document.getElementById('whatsapp-btn').style.display = 'none';
-                document.getElementById('clear-btn').style.display = 'none';
