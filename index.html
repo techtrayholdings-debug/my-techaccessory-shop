@@ -98,7 +98,7 @@
     <div class="checkout-box">
         <h2>How to Complete Your Order</h2>
         <p><strong>Step 1:</strong> Click "Add to Order" on your items.</p>
-        <p><strong>Step 2:</strong> Transfer the exact total amount to our bank account:</p>
+        <p><strong>Step 2:</strong> Pay your order using our banking details then send us your proof of payment using our business whatsapp or directly speak to us on WhatsApp to place an order:</p>
         <ul>
             <li><strong>Bank Name:</strong> Your Bank Name</li>
             <li><strong>Account Number:</strong> 1234567890</li>
@@ -140,8 +140,8 @@
             currentOrder.push(itemName);
             totalCost += itemPrice;
             document.getElementById('cart-summary').innerHTML = 
-                `🛒 Items: ${currentOrder.join(', ')} <br> 💵 Total Amount to Transfer: $${totalCost.toFixed(2)}`;
-            alert(`${itemName} added to your summary below!`);
+                `🛒 Items: R{currentOrder.join(', ')} <br> 💵 Total Amount to Transfer: RR{totalCost.toFixed(2)}`;
+            alert(`R{itemName} added to your summary below!`);
         }
     </script>
 
