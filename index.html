@@ -163,7 +163,7 @@
                 document.getElementById('cart-summary').innerHTML = "Current Selected Items: None";
                 return;
             }
-
+}
             let deliveryDropdown = document.getElementById('delivery-method');
             let selectedOption = deliveryDropdown.options[deliveryDropdown.selectedIndex];
             let deliveryFee = parseFloat(selectedOption.getAttribute('data-fee')) || 0;
@@ -176,8 +176,7 @@
                 `💵 Items Subtotal: R${itemsCost.toFixed(2)} <br>` +
                 `🚚 Method: ${deliveryText} <br>` +
                 `💰 Grand Total: R${totalCost.toFixed(2)}`;
-        }
-}
+    
         function addToCart(itemName, itemPrice) {
             currentOrder.push(itemName);
             itemsCost += parseFloat(itemPrice);
