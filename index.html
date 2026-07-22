@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechTray Holdings | Premium HOCO Accessories</title>
+
+<title>TechTray Holdings | HOCO Accessories</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -18,6 +20,8 @@ background:#f5f7fb;
 color:#333;
 }
 
+/* Header */
+
 header{
 background:#081b4b;
 color:white;
@@ -25,108 +29,237 @@ padding:20px;
 text-align:center;
 }
 
+header img{
+width:120px;
+margin-bottom:10px;
+}
+
 header h1{
-font-size:38px;
+font-size:36px;
 }
 
 header p{
-margin-top:10px;
+margin-top:8px;
 }
+
+/* Navigation */
 
 nav{
 background:#102b70;
-padding:15px;
 display:flex;
 justify-content:center;
-gap:30px;
+flex-wrap:wrap;
+gap:10px;
+padding:15px;
 }
 
-nav a{
+nav button{
+
+background:none;
+border:none;
 color:white;
-text-decoration:none;
+font-size:16px;
 font-weight:bold;
+cursor:pointer;
+padding:10px 18px;
+border-radius:6px;
+transition:.3s;
+
 }
+
+nav button:hover{
+
+background:#25D366;
+
+}
+
+nav button.active{
+
+background:#25D366;
+
+}
+
+/* Hero */
 
 .hero{
-padding:60px;
+
 text-align:center;
+padding:40px;
 background:white;
+
 }
 
 .hero h2{
-font-size:40px;
+
 color:#081b4b;
-margin-bottom:15px;
+font-size:34px;
+margin-bottom:10px;
+
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:30px;
+
+font-size:18px;
+margin-bottom:25px;
+
 }
 
-.btn{
+.hero a{
+
 background:#25D366;
-padding:15px 30px;
 color:white;
+padding:14px 25px;
 text-decoration:none;
-border-radius:8px;
+border-radius:6px;
 font-weight:bold;
+
 }
+
+/* Search */
+
+.search{
+
+text-align:center;
+padding:20px;
+
+}
+
+.search input{
+
+width:90%;
+max-width:450px;
+padding:12px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:6px;
+
+}
+
+/* Product Grid */
 
 .products{
-padding:50px;
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+padding:30px;
+
 }
 
 .card{
+
 background:white;
-padding:20px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
+padding:20px;
+box-shadow:0 3px 12px rgba(0,0,0,.12);
 text-align:center;
+
 }
 
 .card img{
+
 width:180px;
 height:180px;
 object-fit:contain;
 margin-bottom:15px;
+
 }
 
 .card h3{
+
+font-size:18px;
 margin-bottom:10px;
+
 }
 
 .price{
+
 font-size:22px;
-color:#0b9444;
+color:#0a9d3f;
 font-weight:bold;
 margin-bottom:15px;
+
 }
 
-button{
+.card button{
+
 background:#081b4b;
 color:white;
-padding:12px;
 border:none;
+padding:12px;
 width:100%;
-border-radius:6px;
 cursor:pointer;
+border-radius:6px;
+font-size:15px;
+
 }
 
-button:hover{
+.card button:hover{
+
 background:#25D366;
+
+}
+
+/* Cart */
+
+.checkout{
+
+background:white;
+padding:25px;
+margin:30px;
+border-radius:10px;
+box-shadow:0 3px 12px rgba(0,0,0,.12);
+
+}
+
+.checkout h2{
+
+color:#081b4b;
+margin-bottom:15px;
+
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select{
+
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
+
+}
+
+.checkout button{
+
+background:#25D366;
+color:white;
+border:none;
+padding:14px;
+width:100%;
+border-radius:6px;
+font-size:17px;
+cursor:pointer;
+
+}
+
+.checkout button:hover{
+
+background:#128C7E;
+
 }
 
 footer{
+
 background:#081b4b;
 color:white;
-padding:30px;
 text-align:center;
+padding:25px;
 margin-top:40px;
+
 }
+
 </style>
 
 </head>
@@ -135,22 +268,29 @@ margin-top:40px;
 
 <header>
 
+<img src="logo.jpg" alt="TechTray Holdings Logo">
+
 <h1>TechTray Holdings</h1>
 
 <p>Premium HOCO Accessories & Electronics</p>
 
 </header>
 
-    <section id="categories">
-        
-</section>
-
 <nav>
 
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<button class="active" onclick="filterCategory('all',this)">All Products</button>
+
+<button onclick="filterCategory('audio',this)">🎧 Audio</button>
+
+<button onclick="filterCategory('power',this)">🔋 Power</button>
+
+<button onclick="filterCategory('car',this)">🚗 Car</button>
+
+<button onclick="filterCategory('cables',this)">🔌 Cables</button>
+
+<button onclick="filterCategory('protection',this)">🛡️ Protection</button>
+
+<button onclick="filterCategory('personal',this)">✂️ Personal Care</button>
 
 </nav>
 
@@ -158,252 +298,469 @@ margin-top:40px;
 
 <h2>Premium HOCO Accessories</h2>
 
-<p>Quality Products • Affordable Prices • Fast WhatsApp Ordering</p>
+<p>Quality Products • Affordable Prices • WhatsApp Ordering</p>
 
-<a class="btn" href="https://wa.me/27662653887">Order on WhatsApp</a>
-
-    <section id="categories">
-
-<h2 style="text-align:center;color:#081b4b;">Shop by Category</h2>
-
-    <div class="tab-container">
-        <nav class="navbar">
-        <button class="tab-btn active" onclick="filterCategory('#', this)">🏠 Home</button>
-        <button class="tab-btn" onclick="filterCategory('#audio', this)">🎧 Audio</button>
-        <button class="tab-btn" onclick="filterCategory('#power', this)">🔋 Power</button>
-        <button class="tab-btn" onclick="filterCategory('#car', this)">🚗 Car</button>
-        <button class="tab-btn active" onclick="filterCategory('#cables', this)">🔌 Cables</button>
-        <button class="tab-btn" onclick="filterCategory('#protection', this)">🛡️ Protection</button>
-        <button class="tab-btn" onclick="filterCategory('#personal', this)">✂️ Personal Care</button>
-        <button class="tab-btn" onclick="filterCategory('#cart', this)">🛒 Cart</button>
-        <button class="tab-btn active" onclick="filterCategory('#contact', this)">📞 Contact</button>
-            </nav>
-    </div>
+<a href="https://wa.me/27662653887">Order on WhatsApp</a>
 
 </section>
-    
-</section>
 
-<div class="products">
+<div class="search">
 
-<div class="card" data-category="#audio">
+<input
+type="text"
+id="searchBox"
+placeholder="Search products..."
+onkeyup="searchProducts()">
+
+</div>
+
+<div class="products" id="productContainer">
+    <!-- AUDIO -->
+
+<div class="card" data-category="audio">
 <img src="EW72.png" alt="EW72">
 <h3>HOCO EW72 Wireless Earbuds</h3>
 <p class="price">R399.00</p>
-<button onclick="addToCart('HOCO EW72 Wireless Earbuds',399.99)">Add to Cart</button>
+<button onclick="addToCart('HOCO EW72 Wireless Earbuds',399)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#audio">
+<div class="card" data-category="audio">
 <img src="EW05.jpeg" alt="EW05">
 <h3>HOCO EW05 Wireless Earbuds</h3>
 <p class="price">R479.99</p>
 <button onclick="addToCart('HOCO EW05 Wireless Earbuds',479.99)">Add to Cart</button>
-    <button class="add-btn" onclick="addToCart('HOCO EW05 Wireless Earbuds',479.99)">Add to Order</button>
 </div>
 
-<div class="card" data-category="#audio">
+<div class="card" data-category="audio">
 <img src="EW97.jpeg" alt="EW97">
 <h3>HOCO EW97 Wireless Earbuds</h3>
 <p class="price">R449.99</p>
 <button onclick="addToCart('HOCO EW97 Wireless Earbuds',449.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#audio">
+<div class="card" data-category="audio">
 <img src="HC17.jpg" alt="HC17">
 <h3>HOCO HC17 Bluetooth Speaker</h3>
 <p class="price">R379.99</p>
 <button onclick="addToCart('HOCO HC17 Bluetooth Speaker',379.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#audio">
+<div class="card" data-category="audio">
 <img src="HC22.png" alt="HC22">
 <h3>HOCO HC22 Bluetooth Speaker</h3>
 <p class="price">R399.99</p>
 <button onclick="addToCart('HOCO HC22 Bluetooth Speaker',399.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#audio">
+<div class="card" data-category="audio">
 <img src="HC1.jpeg" alt="HC1">
 <h3>HOCO HC1 Bluetooth Speaker</h3>
 <p class="price">R399.99</p>
 <button onclick="addToCart('HOCO HC1 Bluetooth Speaker',399.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#power">
+<!-- POWER -->
+
+<div class="card" data-category="power">
 <img src="N34.png" alt="N34">
 <h3>HOCO N34 Fast Charger</h3>
 <p class="price">R379.99</p>
 <button onclick="addToCart('HOCO N34 Fast Charger',379.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#car">
-<img src="CA102.jpeg" alt="CA102">
-<h3>HOCO CA102 Car Holder</h3>
-<p class="price">R149.99</p>
-<button onclick="addToCart('HOCO CA102 Car Holder',149.99)">Add to Cart</button>
-</div>
-
-<div class="card" data-category="#car">
-<img src="E73.jpeg" alt="E73">
-<h3>HOCO E73 Bluetooth Adapter</h3>
-<p class="price">R289.99</p>
-<button onclick="addToCart('HOCO E73 Bluetooth Adapter',289.99)">Add to Cart</button>
-</div>
-
-<div class="card" data-category="#cable">
-<img src="X88.png" alt="X88">
-<h3>HOCO X88 USB-C Cable</h3>
-<p class="price">R159.99</p>
-<button onclick="addToCart('HOCO X88 USB-C Cable',159.99)">Add to Cart</button>
-</div>
-
-<div class="card" data-category="#power">
+<div class="card" data-category="power">
 <img src="J101A.jpeg" alt="J101A">
 <h3>HOCO J101A 20,000mAh Power Bank</h3>
 <p class="price">R649.99</p>
 <button onclick="addToCart('HOCO J101A 20,000mAh Power Bank',649.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#protection">
+<!-- CAR -->
+
+<div class="card" data-category="car">
+<img src="CA102.jpeg" alt="CA102">
+<h3>HOCO CA102 Car Holder</h3>
+<p class="price">R149.99</p>
+<button onclick="addToCart('HOCO CA102 Car Holder',149.99)">Add to Cart</button>
+</div>
+
+<div class="card" data-category="car">
+<img src="E73.jpeg" alt="E73">
+<h3>HOCO E73 Bluetooth Adapter</h3>
+<p class="price">R289.99</p>
+<button onclick="addToCart('HOCO E73 Bluetooth Adapter',289.99)">Add to Cart</button>
+</div>
+
+<!-- CABLES -->
+
+<div class="card" data-category="cables">
+<img src="X88.png" alt="X88">
+<h3>HOCO X88 USB-C Fast Cable</h3>
+<p class="price">R159.99</p>
+<button onclick="addToCart('HOCO X88 USB-C Fast Cable',159.99)">Add to Cart</button>
+</div>
+
+<!-- PROTECTION -->
+
+<div class="card" data-category="protection">
 <img src="G100-5.jpeg" alt="G100-5">
 <h3>HOCO G100-5 Flexible Film (20 PCS)</h3>
 <p class="price">R1649.99</p>
-<button onclick="addToCart('HOCO G100-5 Flexible Film (20 PCS)',1649.99)">Add to Cart</button>
+<button onclick="addToCart('HOCO G100-5 Flexible Film',1649.99)">Add to Cart</button>
 </div>
 
-<div class="card" data-category="#personal">
-<img src="HP25.jpeg" alt="Audio">
+<!-- PERSONAL CARE -->
+
+<div class="card" data-category="personal">
+<img src="HP25.jpeg" alt="HP25">
 <h3>HOCO HP25 Hair Clipper</h3>
 <p class="price">R349.99</p>
 <button onclick="addToCart('HOCO HP25 Hair Clipper',349.99)">Add to Cart</button>
 </div>
 
 </div>
-<!-- Payment Block -->
-    <div class="checkout-box">
-        <h2>How to Complete Your Order</h2>
-        <p><strong>Step 1:</strong> Click "Add to Order" on the items you want.</p>
-        <p><strong>Step 2:</strong> Select your preferred fulfillment/delivery method below.</p>
-        <p><strong>Step 3:</strong> Click the green button below to submit your order summary to us on WhatsApp.</p>
-        
-        <div id="cart-summary" style="margin-top: 15px; font-weight: bold; color: #2c3e50; line-height: 1.6;">
-            Current Selected Items: None
-        </div>
+<!-- End of Product Grid -->
+    <!-- ========================= -->
+<!-- SHOPPING CART -->
+<!-- ========================= -->
 
-        <!-- Delivery Selector Module -->
-        <div id="delivery-box" class="delivery-section">
-            <label for="delivery-method">Select Fulfillment / Shipping Method:</label>
-            <select id="delivery-method" class="form-select" onchange="updateCartDisplay()">
-                <option value="pickup" data-fee="0">🏃‍♂️ Local Pickup / Collection (Free - R0.00)</option>
-                <option value="paxi" data-fee="60">📦 Paxi - Pep to Pep (R60.00)</option>
-                <option value="courier" data-fee="100">🚚 Standard Door to Door Courier (R100.00)</option>
-            </select>
-        </div>
+<section class="checkout">
 
-        
-<h3>Customer Information</h3>
-<input type="text" id="customer-name" placeholder="Full Name" style="width:100%;padding:10px;margin:6px 0;">
-<input type="tel" id="customer-phone" placeholder="WhatsApp Number" style="width:100%;padding:10px;margin:6px 0;">
-<textarea id="customer-address" placeholder="Delivery Address" style="width:100%;padding:10px;margin:6px 0;height:80px;"></textarea>
+<h2>🛒 Shopping Cart</h2>
 
-<div class="btn-group">
-            <!-- WhatsApp Order Button -->
-            <button id="whatsapp-btn" onclick="sendWhatsAppOrder()" style="background-color: #25D366; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 1.1em; margin-top: 10px; display: none;">
-                📱 Submit Order via WhatsApp
-            </button>
+<div id="cart-items">
 
-            <!-- Clear/Empty Cart Button -->
-            <button id="clear-btn" class="clear-btn" onclick="emptyCart()">
-                🗑️ Empty Cart / Reset Order
-            </button>
-        </div>
-    </div>
-    
+<p>Your cart is empty.</p>
+
+</div>
+
+<hr><br>
+
+<p><strong>Subtotal:</strong> <span id="subtotal">R0.00</span></p>
+
+<br>
+
+<label><strong>Delivery Method</strong></label>
+
+<select id="delivery" onchange="updateCart()">
+
+<option value="0">🏃 Collection (Free)</option>
+
+<option value="60">📦 PAXI (R60)</option>
+
+<option value="100">🚚 Courier (R100)</option>
+
+</select>
+
+<br><br>
+
+<p><strong>Delivery Fee:</strong>
+
+<span id="delivery-fee">R0.00</span>
+
+</p>
+
+<br>
+
+<h3>Grand Total:
+
+<span id="grand-total">R0.00</span>
+
+</h3>
+
+<br>
+
+<hr>
+
+<br>
+
+<h2>Customer Information</h2>
+
+<input
+type="text"
+id="customer-name"
+placeholder="Full Name"
+required>
+
+<input
+type="tel"
+id="customer-phone"
+placeholder="WhatsApp Number"
+required>
+
+<textarea
+id="customer-address"
+placeholder="Delivery Address"
+rows="4"></textarea>
+
+<br><br>
+
+<button
+id="checkoutBtn"
+onclick="checkoutWhatsApp()">
+
+📱 Checkout via WhatsApp
+
+</button>
+
+<br><br>
+
+<button
+style="background:#d63031;"
+onclick="clearCart()">
+
+🗑 Empty Cart
+
+</button>
+
+</section>
+
 <footer>
 
 <h2>TechTray Holdings</h2>
 
 <p>Premium HOCO Accessories & Electronics</p>
 
-<p>📱 WhatsApp: +27 66 265 3887</p>
+<p>
 
-<p>© 2026 TechTray Holdings</p>
+📱 WhatsApp:
++27 66 265 3887
+
+</p>
+
+<p>
+
+© 2026 TechTray Holdings
+
+</p>
 
 </footer>
-    <script>let cart = [];
 
-function addToCart(name, price){
+<script>
 
-cart.push({
-name:name,
-price:price
-});
+let cart=[];
+    // Add product to cart
+function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
 
-updateCart();
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            qty: 1
+        });
+    }
+
+    updateCart();
+}
+
+// Update cart display
+function updateCart() {
+
+    const cartItems = document.getElementById("cart-items");
+    const subtotal = document.getElementById("subtotal");
+    const grandTotal = document.getElementById("grand-total");
+    const deliveryFee = document.getElementById("delivery-fee");
+
+    let html = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        subtotal.innerHTML = "R0.00";
+        deliveryFee.innerHTML = "R0.00";
+        grandTotal.innerHTML = "R0.00";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+
+        const lineTotal = item.price * item.qty;
+        total += lineTotal;
+
+        html += `
+        <div style="border-bottom:1px solid #ddd;padding:10px 0;">
+            <strong>${item.name}</strong><br>
+            Qty:
+            <button onclick="changeQty(${index},-1)">-</button>
+            <strong>${item.qty}</strong>
+            <button onclick="changeQty(${index},1)">+</button>
+
+            <br>
+
+            R${item.price.toFixed(2)} each
+
+            <br>
+
+            Total:
+            <strong>R${lineTotal.toFixed(2)}</strong>
+
+            <br>
+
+            <button onclick="removeItem(${index})" style="background:#d63031;color:white;border:none;padding:5px 10px;margin-top:6px;">
+            Remove
+            </button>
+        </div>
+        `;
+    });
+
+    cartItems.innerHTML = html;
+
+    subtotal.innerHTML = "R" + total.toFixed(2);
+
+    const delivery = Number(document.getElementById("delivery").value);
+
+    deliveryFee.innerHTML = "R" + delivery.toFixed(2);
+
+    grandTotal.innerHTML = "R" + (total + delivery).toFixed(2);
+}
+
+// Increase / decrease quantity
+function changeQty(index, amount) {
+
+    cart[index].qty += amount;
+
+    if (cart[index].qty <= 0) {
+        cart.splice(index,1);
+    }
+
+    updateCart();
+}
+
+// Remove product
+function removeItem(index) {
+
+    cart.splice(index,1);
+
+    updateCart();
 
 }
 
-function updateCart(){
+// Empty cart
+function clearCart(){
 
-let html="";
+    if(confirm("Clear your shopping cart?")){
 
-let total=0;
+        cart=[];
 
-cart.forEach(function(item){
+        updateCart();
 
-html += "<p>"+item.name+" - R"+item.price.toFixed(2)+"</p>";
-
-total += item.price;
-
-});
-
-if(cart.length===0){
-html="<p>Your cart is empty.</p>";
-}
-
-document.getElementById("cart-items").innerHTML=html;
-
-document.getElementById("subtotal").innerHTML="R"+total.toFixed(2);
-
-let delivery=parseFloat(document.getElementById("delivery").value);
-
-document.getElementById("grand-total").innerHTML="R"+(total+delivery).toFixed(2);
+    }
 
 }
 
+// Search products
+function searchProducts(){
+
+    const search=document.getElementById("searchBox").value.toLowerCase();
+
+    const cards=document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        const title=card.querySelector("h3").innerText.toLowerCase();
+
+        if(title.includes(search)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+
+// Category filter
+function filterCategory(category,button){
+
+    document.querySelectorAll("nav button").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const cards=document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        if(category==="all"){
+
+            card.style.display="block";
+
+        }
+
+        else if(card.dataset.category===category){
+
+            card.style.display="block";
+
+        }
+
+        else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+
+// WhatsApp Checkout
 function checkoutWhatsApp(){
 
-if(cart.length===0){
+    if(cart.length===0){
 
-alert("Your cart is empty.");
+        alert("Your cart is empty.");
 
-return;
+        return;
+
+    }
+
+    const customer=document.getElementById("customer-name").value;
+    const phone=document.getElementById("customer-phone").value;
+    const address=document.getElementById("customer-address").value;
+
+    let total=0;
+
+    let message="*TechTray Holdings Order*%0A%0A";
+
+    message+="*Customer:* "+customer+"%0A";
+    message+="*Phone:* "+phone+"%0A";
+    message+="*Address:* "+address+"%0A%0A";
+
+    message+="*Products*%0A";
+
+    cart.forEach(item=>{
+
+        const line=item.price*item.qty;
+
+        total+=line;
+
+        message+="• "+item.name+" x"+item.qty+" - R"+line.toFixed(2)+"%0A";
+
+    });
+
+    const delivery=Number(document.getElementById("delivery").value);
+
+    message+="%0A";
+    message+="Subtotal: R"+total.toFixed(2)+"%0A";
+    message+="Delivery: R"+delivery.toFixed(2)+"%0A";
+    message+="Grand Total: R"+(total+delivery).toFixed(2);
+
+    window.open("https://wa.me/27662653887?text="+message);
 
 }
 
-let total=0;
+// Start page
+updateCart();
 
-let message="*TechTray Holdings Order*%0A%0A";
+</script>
 
-cart.forEach(function(item){
-
-message+="• "+item.name+" - R"+item.price.toFixed(2)+"%0A";
-
-total+=item.price;
-
-});
-
-let delivery=parseFloat(document.getElementById("delivery").value);
-
-message+="%0AItems Total: R"+total.toFixed(2);
-
-message+="%0ADelivery: R"+delivery.toFixed(2);
-
-message+="%0AGrand Total: R"+(total+delivery).toFixed(2);
-
-window.open("https://wa.me/27662653887?text="+message);
-
-}</script>
-    
 </body>
 </html>
