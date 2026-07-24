@@ -329,3 +329,32 @@ nav{
     display:block;
     height:auto;
 }
+/* CATEGORY CARDS */
+
+.category-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    text-decoration:none;
+    color:#081B4B;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.category-card span{
+    font-size:55px;
+}
+
+.category-card h3{
+    margin:20px 0 10px;
+}
+
+.category-card p{
+    color:#666;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
